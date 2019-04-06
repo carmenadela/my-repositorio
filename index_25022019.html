@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pruebas Bootstrap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+<script>
+
+	$(document).ready(function(){
+		var valor='{"name": "file-upload-demo","version": "2","description": "multipart","main": "server.js"}';
+		let myForm = new FormPage ("", $("#formpage"));
+		myForm.setMode (FormPage.prototype.MODE_LIVE);
+
+		var fl = new FormLoader();
+		myForm = fl.loadVersion(JSON.parse(valor), $("#formpage"));
+
+	});
+
+
+</script>
+
+</head>
+
+
+<body>
+<div id="formpage">Hola
+
+</div>
+
+
+</body>
+
+</html> 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pruebas Bootstrap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>    
+    <script src="js/main.js" type="text/javascript"></script>    
+    
+    
+<script>
+  
+ 
+$(document).ready(function() {
+
+//let myForm = new FormPage("", $("#formpage"));
+//myForm.setMode(FormPage.prototype.MODE_LIVE);
+
+let my_form=document.createElement('FORM');
+my_form.id='formpage';
+my_form.name='formpage';
+my_form.method='POST';
+my_form.action='index.html';
+
+
+my_tb=document.createElement('INPUT');
+my_tb.type='TEXT';
+my_tb.name='myInput';
+my_tb.value='My Input';
+my_form.appendChild(my_tb);
+
+document.body.appendChild(my_form);
+
+var valor=$("#formpage");    
+$.getJSON("index.html",{form:valor});
+
+var FORMFILE = JSON.stringify(my_form);
+
+console.log(FORMFILE);
+
+
+
+var fl = new FormLoader();
+let myForm = fl.loadVersion(JSON.parse(FORMFILE), $("#formpage"));
+
+
+
+
+});
+
+
+
+</script>    
+    
+</head>
+
+
+
+<body>
+    
+</body>
+<div >
+</div>
+</html> 

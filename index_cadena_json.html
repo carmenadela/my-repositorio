@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pruebas Bootstrap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>    
+    <script src="js/main.js" type="text/javascript"></script>    
+    
+</head>
+
+
+<body>
+
+<script>
+$(document).ready(function() {
+
+// CREAR y ABRIR EL FORMULARIO  
+let myForm = new FormPage("", $("#formpage"));
+myForm.setMode(FormPage.prototype.MODE_LIVE);
+
+// CARGAR EL FORMULARIO  
+var fl = new FormLoader();
+var FORMFILE = JSON.stringify(fl.save(myForm));
+console.log(FORMFILE);
+myForm = fl.loadVersion(JSON.parse(FORMFILE), $("#formpage"));
+
+my_tb=document.createElement('INPUT');
+my_tb.type='TEXT';
+my_tb.name='myInput';
+my_tb.value='My Input';
+myForm.appendChild(my_tb);
+
+document.body.appendChild(myForm);
+
+
+});
+</script> 
+    
+</body>
+<div >
+</div>
+</html> 
